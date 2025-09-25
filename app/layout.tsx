@@ -5,11 +5,13 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ScrollToTopButton } from "@/components/scroll-to-top-button"
+import { AnimatedBackground } from "@/components/animated-background"
+import { BootSequence } from "@/components/boot-sequence"
 
 import "./globals.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://wiz-labs-ux-portfolio.vercel.app/"),
   title: {
     default: "Wiz Labs | Premium UI/UX Design Solutions",
     template: "%s | Wiz Labs",
@@ -150,6 +152,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+        <BootSequence />
+        <AnimatedBackground />
         <Suspense fallback={null}>{children}</Suspense>
         <ScrollToTopButton />
         <Analytics />

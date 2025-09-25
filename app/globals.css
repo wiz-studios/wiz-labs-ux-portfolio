@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Removed unsupported @custom-variant dark (&:is(.dark *)); */
-
 :root {
   /* Dark theme variables */
   --background: oklch(0.08 0.01 240);
