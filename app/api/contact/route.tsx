@@ -3,6 +3,10 @@ import nodemailer from "nodemailer"
 
 export async function POST(request: NextRequest) {
   try {
+    // Log environment check
+    console.log("SMTP_USER exists:", !!process.env.SMTP_USER)
+    console.log("SMTP_HOST:", process.env.SMTP_HOST)
+    
     const { name, email, company, budget, timeline, message } = await request.json()
 
     // Validate required fields
@@ -16,16 +20,36 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 })
     }
 
+    // Verify required environment variables
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error("Missing SMTP credentials in environment variables")
+      return NextResponse.json(
+        { error: "Email service not properly configured" },
+        { status: 500 }
+      )
+    }
+
     // Create transporter using the provided SMTP configuration
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "smtp.gmail.com",
       port: Number.parseInt(process.env.SMTP_PORT || "587"),
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER || process.env.EMAIL_USER,
-        pass: process.env.SMTP_PASS || process.env.EMAIL_PASS,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     })
+
+    // Verify SMTP connection
+    try {
+      await transporter.verify()
+    } catch (error) {
+      console.error("SMTP Verification failed:", error)
+      return NextResponse.json(
+        { error: "Failed to connect to email service" },
+        { status: 500 }
+      )
+    }
 
     // Email content
     const emailContent = `

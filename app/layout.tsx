@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ScrollToTopButton } from "@/components/scroll-to-top-button"
-import { AnimatedBackground } from "@/components/animated-background"
+import { ParticleBackground } from "@/components/particle-background"
 import { BootSequence } from "@/components/boot-sequence"
 
 import "./globals.css"
@@ -153,7 +153,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <BootSequence />
-        <AnimatedBackground />
+        <ParticleBackground />
         <Suspense fallback={null}>{children}</Suspense>
         <ScrollToTopButton />
         <Analytics />
