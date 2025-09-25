@@ -3,16 +3,17 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
+import "@/app/terminal.css"
 
 const bootSequences = [
-  { text: "> Initializing UI/UX neural matrix...", delay: 600 },
-  { text: "> Calibrating neon grid renderer...", delay: 700 },
-  { text: "> Loading creative algorithms...", delay: 800 },
-  { text: "> Syncing design neural net...", delay: 750 },
-  { text: "> Deploying creative subroutines...", delay: 900 },
-  { text: "> Optimizing experience parameters...", delay: 600 },
-  { text: "> Running final diagnostics...", delay: 500 },
-  { text: "> System ready. Launch sequence engaged.", delay: 400, class: "text-neon-success" },
+  { text: "[INIT] Mounting virtual filesystem...", delay: 600 },
+  { text: "[BOOT] Loading system kernel v3.4.2...", delay: 700 },
+  { text: "[MEM] Allocating 256MB creative buffer...", delay: 800 },
+  { text: "[GPU] Initializing neon matrix renderer...", delay: 750 },
+  { text: "[NET] Establishing quantum design link...", delay: 900 },
+  { text: "[SYS] Running integrity checks...", delay: 600 },
+  { text: "[LOG] All systems nominal...", delay: 500 },
+  { text: "[OK] Terminal ready. Type 'help' for commands.", delay: 400, class: "text-neon-success" },
 ]
 
 // Helper for random typing delays
@@ -98,6 +99,11 @@ export function BootSequence() {
       ${isComplete ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       role="region"
       aria-label="System Boot Sequence"
+      style={{
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.98) 100%)',
+        fontFamily: 'Geist Mono, monospace',
+        textShadow: '0 0 5px rgba(0,255,0,0.5)'
+      }}
     >
       {/* Skip button */}
       <Button
@@ -111,28 +117,17 @@ export function BootSequence() {
       </Button>
 
       {/* Boot sequence content */}
-      <div className="w-full max-w-2xl space-y-2 p-8 relative z-10">
-        <div className="font-mono text-sm text-neon-blue mb-8 relative">
-          {/* Scanline effect */}
-          <div className="absolute inset-0 animate-scanline bg-gradient-to-b from-white/0 via-neon-blue/10 to-white/0 pointer-events-none" />
-          
-          {displayedLines.map((line, index) => (
-            <div
-              key={index}
-              className={`transition-opacity duration-300 ${
-                bootSequences[index]?.class || ""
-              }`}
-            >
-              <span className="mr-2 opacity-50">$</span>
-              {line}
-            </div>
-          ))}
-        </div>
-
-        {/* Blinking cursor */}
-        {!isComplete && isTyping && (
-          <div className="w-2 h-4 bg-neon-blue animate-cursor-blink inline-block" />
-        )}
+      <div className="terminal-container">
+        {displayedLines.map((line, index) => (
+          <div
+            key={index}
+            className={`terminal-line ${
+              bootSequences[index]?.class || ""
+            } ${index === currentLine && isTyping ? "terminal-cursor" : ""}`}
+          >
+            <span className="text-[#00aa00]">[TERM]</span> {line}
+          </div>
+        ))}
       </div>
 
       {/* Tech grid background with pulse effect */}

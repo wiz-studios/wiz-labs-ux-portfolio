@@ -1,12 +1,93 @@
 "use client"
 
 import { useCallback } from "react"
-import type { Engine } from "@tsparticles/engine"
-import type { ISourceOptions, RecursivePartial } from "@tsparticles/engine"
-import Particles from "@tsparticles/react"
+import type { Container, Engine } from "@tsparticles/engine"
 import { loadSlim } from "@tsparticles/slim"
+import { IParticlesProps } from "@tsparticles/react"
 
-const particlesConfig: RecursivePartial<ISourceOptions> = {
+interface ParticlesConfig {
+  fpsLimit: number
+  fullScreen: {
+    enable: boolean
+    zIndex: number
+  }
+  particles: {
+    color: {
+      value: string[]
+    }
+    links: {
+      color: string
+      distance: number
+      enable: boolean
+      opacity: number
+      width: number
+    }
+    collisions: {
+      enable: boolean
+    }
+    move: {
+      direction: string
+      enable: boolean
+      outModes: {
+        default: string
+      }
+      random: boolean
+      speed: number
+      straight: boolean
+    }
+    number: {
+      density: {
+        enable: boolean
+        width: number
+        height: number
+      }
+      value: number
+    }
+    opacity: {
+      value: number
+    }
+    shape: {
+      type: string
+    }
+    size: {
+      value: {
+        min: number
+        max: number
+      }
+    }
+  }
+  interactivity: {
+    detectsOn: string
+    events: {
+      onHover: {
+        enable: boolean
+        mode: string
+        parallax: {
+          enable: boolean
+          force: number
+          smooth: number
+        }
+      }
+      resize: {
+        enable: boolean
+      }
+    }
+    modes: {
+      grab: {
+        distance: number
+        links: {
+          opacity: number
+        }
+      }
+    }
+  }
+  detectRetina: boolean
+  background: {
+    color: string
+  }
+}
+
+const particlesConfig: ParticlesConfig = {
   fpsLimit: 60,
   fullScreen: {
     enable: true,
@@ -39,7 +120,8 @@ const particlesConfig: RecursivePartial<ISourceOptions> = {
     number: {
       density: {
         enable: true,
-        area: 800,
+        width: 800,
+        height: 800,
       },
       value: 80,
     },
@@ -65,7 +147,9 @@ const particlesConfig: RecursivePartial<ISourceOptions> = {
           smooth: 10,
         },
       },
-      resize: true,
+      resize: {
+        enable: true,
+      },
     },
     modes: {
       grab: {
@@ -83,14 +167,16 @@ const particlesConfig: RecursivePartial<ISourceOptions> = {
 }
 
 export function ParticleBackground() {
-  const particlesInit = useCallback(async (engine: Engine) => {
+  const handleInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine)
   }, [])
+
+  const Particles = require("@tsparticles/react").default
 
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
+      loaded={handleInit}
       options={particlesConfig}
     />
   )
