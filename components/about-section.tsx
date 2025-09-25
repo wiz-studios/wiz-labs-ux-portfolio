@@ -132,10 +132,22 @@ export function AboutSection() {
               <Button size="lg" asChild className="btn-tech hover-glow font-mono">
                 <a href="#contact">Let's Work Together</a>
               </Button>
-              <Button variant="outline" size="lg" className="glass hover-lift font-mono bg-transparent">
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </Button>
+                <Button
+                variant="outline"
+                size="lg"
+                className="glass hover-lift font-mono bg-transparent"
+                asChild
+                >
+                <a
+                  href="/Emmanuel_Ronoh_CV_Default.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
+                </Button>
             </div>
           </div>
 

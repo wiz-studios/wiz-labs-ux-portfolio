@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* Removed unsupported @custom-variant dark (&:is(.dark *)); */
 
 :root {
-  /* Updated to premium dark theme with sophisticated color palette */
+  /* Dark theme variables */
   --background: oklch(0.08 0.01 240);
   --foreground: oklch(0.95 0.01 240);
   --card: oklch(0.12 0.01 240);
@@ -48,6 +48,41 @@
 
 .dark {
   --background: oklch(0.08 0.01 240);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.12 0.01 240);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.12 0.01 240);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: oklch(0.7 0.15 200);
+  --primary-foreground: oklch(0.08 0.01 240);
+  --secondary: oklch(0.15 0.01 240);
+  --secondary-foreground: oklch(0.95 0.01 240);
+  --muted: oklch(0.15 0.01 240);
+  --muted-foreground: oklch(0.6 0.01 240);
+  --accent: oklch(0.7 0.15 200);
+  --accent-foreground: oklch(0.08 0.01 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.95 0.01 240);
+  --border: oklch(0.2 0.01 240);
+  --input: oklch(0.15 0.01 240);
+  --ring: oklch(0.7 0.15 200);
+  --chart-1: oklch(0.7 0.15 200);
+  --chart-2: oklch(0.6 0.12 160);
+  --chart-3: oklch(0.65 0.18 280);
+  --chart-4: oklch(0.75 0.2 320);
+  --chart-5: oklch(0.8 0.15 40);
+  --sidebar: oklch(0.12 0.01 240);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.7 0.15 200);
+  --sidebar-primary-foreground: oklch(0.08 0.01 240);
+  --sidebar-accent: oklch(0.15 0.01 240);
+  --sidebar-accent-foreground: oklch(0.95 0.01 240);
+  --sidebar-border: oklch(0.2 0.01 240);
+  --sidebar-ring: oklch(0.7 0.15 200);
+  --neon-blue: oklch(0.8 0.25 220);
+  --neon-purple: oklch(0.75 0.3 280);
+  --neon-green: oklch(0.8 0.2 140);
+  --tech-grid: oklch(0.15 0.02 240);
   --foreground: oklch(0.95 0.01 240);
   --card: oklch(0.12 0.01 240);
   --card-foreground: oklch(0.95 0.01 240);
