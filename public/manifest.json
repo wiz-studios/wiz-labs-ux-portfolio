@@ -1,0 +1,27 @@
+{
+  "name": "UI/UX Designer Portfolio",
+  "short_name": "UX Portfolio",
+  "description": "Freelance UI/UX designer specializing in premium digital experiences and conversion-focused designs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["design", "portfolio", "business"],
+  "lang": "en",
+  "dir": "ltr"
+}

@@ -1,0 +1,118 @@
+import { Metadata } from "next"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft, Calendar } from "lucide-react"
+import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Wiz Labs",
+  description: "Privacy policy and data collection practices for Wiz Labs UI/UX design services",
+}
+
+export default function PrivacyPolicy() {
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Back Button */}
+        <div className="mb-8">
+          <Button variant="ghost" className="group" asChild>
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
+
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">Privacy Policy</h1>
+          <p className="text-xl text-muted-foreground">
+            How we collect, use, and protect your information
+          </p>
+          <div className="flex items-center gap-6 mt-6">
+            <Badge variant="outline" className="text-sm flex items-center">
+              <Calendar className="mr-2 h-4 w-4" />
+              Last updated: {new Date().toLocaleDateString()}
+            </Badge>
+          </div>
+        </div>
+
+        {/* Content */}
+        <Card>
+          <CardContent className="p-8">
+            <div className="space-y-12">
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
+                <p className="text-muted-foreground">
+                  Welcome to Wiz Labs. This Privacy Policy explains how we collect, use, disclose, and safeguard your information
+                  when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this
+                  privacy policy, please do not access the site.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">Information We Collect</h2>
+                <p className="text-muted-foreground mb-4">
+                  We collect information that you voluntarily provide to us when you:
+                </p>
+                <ul className="list-disc pl-6 text-muted-foreground">
+                  <li>Fill out the contact form</li>
+                  <li>Subscribe to our newsletter</li>
+                  <li>Request a consultation</li>
+                  <li>Send us feedback</li>
+                </ul>
+                <p className="text-muted-foreground mt-4">
+                  This information may include your name, email address, company name, and any other information you choose to
+                  provide.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">How We Use Your Information</h2>
+                <p className="text-muted-foreground mb-4">We use the information we collect to:</p>
+                <ul className="list-disc pl-6 text-muted-foreground">
+                  <li>Respond to your inquiries and provide requested services</li>
+                  <li>Send you project updates and communications</li>
+                  <li>Improve our website and services</li>
+                  <li>Comply with legal obligations</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">Data Security</h2>
+                <p className="text-muted-foreground">
+                  We implement appropriate technical and organizational security measures to protect your personal information.
+                  However, please note that no security system is impenetrable and we cannot guarantee the security of our systems
+                  100%.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">Your Rights</h2>
+                <p className="text-muted-foreground mb-4">You have the right to:</p>
+                <ul className="list-disc pl-6 text-muted-foreground">
+                  <li>Access your personal information</li>
+                  <li>Correct inaccurate information</li>
+                  <li>Request deletion of your information</li>
+                  <li>Object to our use of your information</li>
+                  <li>Withdraw consent where applicable</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+                <p className="text-muted-foreground">
+                  If you have questions about this Privacy Policy, please contact us at:{" "}
+                  <a href="mailto:wiz.labs1@gmail.com" className="text-primary hover:underline">
+                    wiz.labs1@gmail.com
+                  </a>
+                </p>
+              </section>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}

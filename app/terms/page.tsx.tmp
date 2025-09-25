@@ -1,0 +1,136 @@
+import { Metadata } from "next"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft, Calendar } from "lucide-react"
+import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Wiz Labs",
+  description: "Terms of service and conditions for Wiz Labs UI/UX design services",
+}
+
+export default function TermsOfService() {
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Back Button */}
+        <div className="mb-8">
+          <Button variant="ghost" className="group" asChild>
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
+
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">Terms of Service</h1>
+          <p className="text-xl text-muted-foreground">
+            Agreement terms and conditions for our services
+          </p>
+          <div className="flex items-center gap-6 mt-6">
+            <Badge variant="outline" className="text-sm flex items-center">
+              <Calendar className="mr-2 h-4 w-4" />
+              Last updated: {new Date().toLocaleDateString()}
+            </Badge>
+          </div>
+        </div>
+
+        {/* Content */}
+        <Card>
+          <CardContent className="p-8">
+            <div className="space-y-12">
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">1. Agreement to Terms</h2>
+                <p className="text-muted-foreground">
+                  By accessing our website and services, you agree to be bound by these Terms of Service and to comply with all
+                  applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or
+                  accessing our services.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">2. Services</h2>
+                <p className="text-muted-foreground mb-4">
+                  We provide UI/UX design, product design, and related consulting services. The specific scope, deliverables, and
+                  terms of each project will be defined in a separate project agreement or statement of work.
+                </p>
+                <p className="text-muted-foreground mb-4">Our services may include:</p>
+                <ul className="list-disc pl-6 text-muted-foreground">
+                  <li>UI/UX Design</li>
+                  <li>User Research</li>
+                  <li>Design Systems</li>
+                  <li>Mobile App Design</li>
+                  <li>Web Application Design</li>
+                  <li>Conversion Optimization</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">3. Intellectual Property</h2>
+                <p className="text-muted-foreground mb-4">
+                  Upon full payment, clients receive ownership of the final deliverables created specifically for their project.
+                  However, we retain ownership of:
+                </p>
+                <ul className="list-disc pl-6 text-muted-foreground">
+                  <li>Pre-existing materials and methodologies</li>
+                  <li>Generic design elements</li>
+                  <li>Tools and processes used in creation</li>
+                  <li>Unused concepts and variations</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">4. Payment Terms</h2>
+                <p className="text-muted-foreground mb-4">
+                  Payment terms, including amounts and schedules, will be specified in the project agreement. Generally:
+                </p>
+                <ul className="list-disc pl-6 text-muted-foreground">
+                  <li>A deposit is required to begin work</li>
+                  <li>Remaining payments are milestone-based</li>
+                  <li>Final deliverables are provided upon full payment</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">5. Confidentiality</h2>
+                <p className="text-muted-foreground">
+                  We maintain strict confidentiality of all client information and project details. We may request permission to
+                  showcase work in our portfolio, which will be handled separately from these terms.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">6. Limitation of Liability</h2>
+                <p className="text-muted-foreground">
+                  Our services are provided "as is" without warranty of any kind. We shall not be liable for any indirect,
+                  incidental, special, consequential, or punitive damages resulting from your use of our services.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">7. Changes to Terms</h2>
+                <p className="text-muted-foreground">
+                  We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to our
+                  website. Continued use of our services constitutes acceptance of modified terms.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-semibold mb-4">8. Contact</h2>
+                <p className="text-muted-foreground">
+                  For questions about these Terms of Service, please contact us at:{" "}
+                  <a href="mailto:wiz.labs1@gmail.com" className="text-primary hover:underline">
+                    wiz.labs1@gmail.com
+                  </a>
+                </p>
+              </section>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}
