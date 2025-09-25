@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { ScrollToTopButton } from "@/components/scroll-to-top-button"
 
 import "./globals.css"
 
@@ -150,6 +151,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
+        <ScrollToTopButton />
         <Analytics />
       </body>
     </html>

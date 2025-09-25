@@ -64,7 +64,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" size="sm" asChild className="glass hover-glow font-mono bg-transparent">
               <a href="https://wiz-dev-studios.vercel.app" target="_blank" rel="noopener noreferrer">
-                Dev Studios
+                Wiz Dev Studios
                 <ExternalLink className="ml-2 h-3 w-3" />
               </a>
             </Button>
