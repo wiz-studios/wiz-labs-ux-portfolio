@@ -152,7 +152,7 @@ export function ContactSection() {
                 <span className="text-neon-blue">function</span> startProject() {"{"}
               </CardTitle>
               <p className="text-muted-foreground font-mono text-sm ml-4">
-                // Fill out the form below and I'll get back to you within 24 hours
+                Fill out the form below and I'll get back to you within 24 hours
               </p>
             </CardHeader>
             <CardContent className="ml-4">

@@ -171,7 +171,15 @@ export function Footer() {
               <a href="/terms" className="hover:text-foreground transition-colors">
                 Terms of Service
               </a>
-              <span>Made with ❤️ for great design</span>
+                <a
+                href="https://buymeacoffee.com/70vqXe5paD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors flex items-center"
+                >
+                <span role="img" aria-label="coffee" className="mr-1">☕</span>
+                Buy me a coffee
+                </a>
             </div>
           </div>
         </div>
