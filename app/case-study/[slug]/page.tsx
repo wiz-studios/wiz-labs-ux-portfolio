@@ -58,6 +58,58 @@ const caseStudies = {
       role: "Product Manager, TechStore",
     },
   },
+  "healthcare-portal-refresh": {
+    title: "Healthcare Portal UX Refresh",
+    subtitle: "Modernizing Patient Experience with Chebigen HMS",
+    description: "Complete UX overhaul of healthcare management system resulting in 55% increase in online bookings and 40% reduction in call-center load.",
+    client: "Chebigen Healthcare",
+    year: "2024",
+    duration: "4 months",
+    category: "Healthcare",
+    tags: ["UX Research", "Healthcare UX", "System Design", "Accessibility"],
+    heroImage: "/healthcare-management-platform-interface.jpg",
+    challenge:
+      "The existing healthcare portal was difficult to navigate, making it hard for patients to find doctors and book appointments. The system had poor accessibility and a confusing user interface that led to high call-center volume.",
+    solution:
+      "I redesigned the entire patient experience with a focus on accessibility, simplified navigation, and intuitive appointment booking. The new system features a clean, modern interface with clear information hierarchy and streamlined workflows.",
+    results: [
+      { metric: "Online Bookings", improvement: "+55%", description: "Patients now prefer online booking over phone calls" },
+      { metric: "Call Center Load", improvement: "-40%", description: "Reduced support tickets and phone calls" },
+      { metric: "Patient Satisfaction", improvement: "+35%", description: "Improved user experience scores" },
+      { metric: "Accessibility Score", improvement: "+90%", description: "WCAG 2.1 AA compliance achieved" },
+    ],
+    process: [
+      {
+        phase: "User Research & Analysis",
+        description:
+          "Conducted patient interviews, usability testing, and accessibility audits to understand pain points and user needs.",
+        deliverables: ["User personas", "Accessibility audit", "Usability testing report", "Journey mapping"],
+      },
+      {
+        phase: "Design & Prototyping",
+        description: "Created wireframes, visual designs, and interactive prototypes with focus on healthcare-specific workflows.",
+        deliverables: ["Wireframes", "Visual designs", "Interactive prototypes", "Accessibility guidelines"],
+      },
+      {
+        phase: "Development & Launch",
+        description: "Collaborated with development team to implement the new system and conducted extensive testing.",
+        deliverables: ["Development handoff", "QA testing", "Accessibility testing", "Launch strategy"],
+      },
+    ],
+    images: [
+      "/healthcare-dashboard-design.jpg",
+      "/patient-booking-interface.jpg",
+      "/doctor-directory-design.jpg",
+      "/mobile-healthcare-app.jpg",
+    ],
+    testimonial: {
+      quote:
+        "The new system has transformed how our patients interact with our services. The improved accessibility and user experience has significantly reduced our support burden while increasing patient satisfaction.",
+      author: "Dr. Sarah Chen",
+      role: "Medical Director, Chebigen Healthcare",
+    },
+    liveUrl: "https://chebigen-hms.vercel.app/",
+  },
   // Add more case studies here...
 }
 
@@ -257,9 +309,18 @@ export default function CaseStudyPage({ params }: CaseStudyParams) {
           <p className="text-muted-foreground mb-8">
             Let's discuss how I can help you achieve similar results for your business.
           </p>
-          <Button size="lg" asChild>
-            <a href="/#contact">Start Your Project</a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {caseStudy.liveUrl && (
+              <Button size="lg" variant="outline" asChild>
+                <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer">
+                  View Live Project
+                </a>
+              </Button>
+            )}
+            <Button size="lg" asChild>
+              <a href="/#contact">Start Your Project</a>
+            </Button>
+          </div>
         </div>
       </section>
     </main>
