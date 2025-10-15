@@ -10,15 +10,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'neon-blue': '#00f3ff',
-        'neon-green': '#00ff9d',
-        'neon-success': '#00ff9d',
-        'neon-purple': '#bf00ff',
+        'accent-blue': '#4a9eff',
+        'accent-green': '#4ade80',
+        'accent-success': '#4ade80',
+        'accent-purple': '#a855f7',
       },
       backgroundImage: {
-        'tech-grid': `radial-gradient(circle at center, rgba(0, 243, 255, 0.1) 1px, transparent 1px),
-          linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px)`,
+        'tech-grid': `radial-gradient(circle at center, rgba(74, 158, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(to right, rgba(74, 158, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(74, 158, 255, 0.02) 1px, transparent 1px)`,
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       backgroundSize: {
